@@ -1,0 +1,20 @@
+mat-toolbar {
+    width: 100%
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    list-style: none;
+    justify-content: space-between;
+}
+
+.menu-items>li {
+    padding: 3px;
+    margin: 2px;
+}
+
+.menu-items>li a {
+    color: white
+}

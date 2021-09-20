@@ -1,3 +1,4 @@
+<app-nav-bar></app-nav-bar>
 <mat-drawer-container class="container" autosize>
     <mat-drawer #drawer class="sidenav" mode="side">
         <p>Auto-resizing sidenav</p>
@@ -8,11 +9,9 @@
     </mat-drawer>
 
     <div class="sidenav-content">
-        <button type="button" mat-button (click)="drawer.toggle()">
-        Toggle sidenav
-      </button>
-        <app-nav-bar></app-nav-bar>
-        <router-outlet></router-outlet>
+        <div>
+            <router-outlet></router-outlet>
+        </div>
     </div>
-    <app-footer></app-footer>
 </mat-drawer-container>
+<app-footer></app-footer>
