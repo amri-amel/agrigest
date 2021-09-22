@@ -1,13 +1,44 @@
 {
-    "parcels": [{
-            "id": 1,
-            "label": "Hanchir JRID",
-            "geoPos": [{
-                "longitude": 33.12,
-                "latitude": 11.5
-            }]
-
+  "parcels": [
+    {
+      "id": 1,
+      "label": "Hanchir JRID",
+      "geoPos": [
+        {
+          "longitude": 33.12,
+          "latitude": 11.5
         }
-
-    ]
+      ]
+    }
+  ],
+  "eqipements": [
+    {
+      "id": 1,
+      "designation": "Tracteur",
+      "type": "Machine",
+      "price": 45000,
+      "brand": "El JEDH3"
+    },
+    {
+      "id": 2,
+      "designation": "Traxe",
+      "type": "Machine",
+      "price": 145000,
+      "brand": "ALAIN"
+    },
+    {
+      "designation": "",
+      "type": "",
+      "brand": "",
+      "price": 0,
+      "id": 3
+    },
+    {
+      "designation": "camion",
+      "type": "Tracteur",
+      "brand": "Marceds",
+      "price": "50000",
+      "id": 4
+    }
+  ]
 }
