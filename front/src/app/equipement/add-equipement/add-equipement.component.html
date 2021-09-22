@@ -1,1 +1,29 @@
-<p>add-equipement works!</p>
+<div class="container">
+    <form [formGroup]="equipementForm">
+        <mat-form-field appearance="fill">
+            <mat-label>Deignation</mat-label>
+            <input matInput formControlName="designation">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Brand</mat-label>
+            <mat-select formControlName="brand">
+                <mat-option *ngFor="let brand of brands" [value]="brand">{{brand}}</mat-option>
+
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Type</mat-label>
+            <mat-select formControlName="type">
+                <mat-option *ngFor='let type of types' [value]="type">{{type}}</mat-option>
+
+            </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Price</mat-label>
+            <input matInput formControlName="price">
+        </mat-form-field>
+    </form>
+
+    <button mat-button (click)=submitEquipement()>Add</button>
+</div>
