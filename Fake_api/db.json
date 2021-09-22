@@ -1,0 +1,14 @@
+{
+  "parcels": [
+    {
+      "id": 1,
+      "label": "Hanchir jrid",
+      "geoPos": [
+        {
+          "longitude": 33.12,
+          "latitude": 11.5
+        }
+      ]
+    }
+  ]
+}
