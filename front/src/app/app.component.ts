@@ -8,4 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'front';
   showFiller = false;
+  log(message:string){
+    console.log(message)
+   }
 }

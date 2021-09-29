@@ -33,4 +33,6 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
 
-<app-add-equipement></app-add-equipement>
+<div style="width:60%;align-self:center;">
+  <app-add-equipement (onAddEquipement)="addEquipementHandler('')"></app-add-equipement>
+</div>

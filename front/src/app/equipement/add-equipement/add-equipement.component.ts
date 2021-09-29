@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-add-equipement',
@@ -8,6 +9,7 @@ import { FormBuilder } from '@angular/forms';
   styleUrls: ['./add-equipement.component.scss']
 })
 export class AddEquipementComponent implements OnInit {
+  @Output() onAddEquipement:EventEmitter<any>=new EventEmitter<any>();
   equipementForm:any;
   public brands=['Marceds','ELJEDDA3','ALAIN']
   types=['Tracteur','Traxe','Insecticides']
@@ -33,7 +35,8 @@ export class AddEquipementComponent implements OnInit {
 
 
     })
-
+   this.onAddEquipement.emit('Ahhhhhaaaaa :)')
   }
+
 
 }
