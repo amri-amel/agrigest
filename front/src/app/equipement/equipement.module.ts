@@ -7,6 +7,8 @@ import { MaterialModule } from '../shared/material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { EquipementCatalogueContainerComponent } from './equipement-catalogue-container/equipement-catalogue-container.component';
+import { EquipementCardComponent } from './equipement-card/equipement-card.component';
 
 
 
@@ -14,7 +16,9 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AddEquipementComponent,
     ListEquipementComponent,
-    UpdateEquipementComponent
+    UpdateEquipementComponent,
+    EquipementCatalogueContainerComponent,
+    EquipementCardComponent
   ],
   imports: [
     CommonModule,
