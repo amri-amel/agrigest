@@ -9,6 +9,7 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
 import { AboutusPageComponent } from './aboutus-page/aboutus-page.component';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../shared/material/material.module';
+import { EquipementCataloguePageComponent } from './equipement-catalogue-page/equipement-catalogue-page.component';
 
 
 
@@ -22,7 +23,8 @@ import { MaterialModule } from '../shared/material/material.module';
     ParcelsPageComponent,
     EquipementsPageComponent,
     ContactPageComponent,
-    AboutusPageComponent
+    AboutusPageComponent,
+    EquipementCataloguePageComponent
   ],
   imports: [
     CommonModule,
