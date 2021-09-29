@@ -39,6 +39,27 @@
       "brand": "Marceds",
       "price": "50000",
       "id": 4
+    },
+    {
+      "designation": "Trax TOMATO",
+      "type": "Traxe",
+      "brand": "ELJEDDA3",
+      "price": "150000",
+      "id": 5
+    },
+    {
+      "designation": "Incecticide DDT",
+      "type": "Insecticides",
+      "brand": "ALAIN",
+      "price": "45",
+      "id": 6
+    },
+    {
+      "designation": "Trax TOMATO",
+      "type": "Traxe",
+      "brand": "ELJEDDA3",
+      "price": "30000",
+      "id": 7
     }
   ]
 }

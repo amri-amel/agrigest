@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { EquipementService } from '../equipement.service';
 
 
 @Component({
@@ -13,19 +14,20 @@ export class ListEquipementComponent implements OnInit,AfterViewInit  {
     'id', 'designation','type' ,'brand', 'price'
   ];
   public dataSource = new MatTableDataSource();
-  public equipments:any;
 
-  constructor(private http:HttpClient) {
+  constructor(private equipementService:EquipementService) {
 
   }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:3000/eqipements').subscribe(
+    this.getAllEquipement()
+  }
+
+  getAllEquipement(){
+    this.equipementService.getAllEquipements().subscribe(
       {
         next:(data)=>{
-          this.equipments=data;
-          this.dataSource=this.equipments;
-          console.log(this.equipments)
+          this.dataSource=data;
         },
         error:(error)=>{
           alert(`Error: ${JSON.stringify(error)}`)
@@ -35,6 +37,10 @@ export class ListEquipementComponent implements OnInit,AfterViewInit  {
     )
   }
 
+  addEquipementHandler($event:any){
+    console.log($event);
+    this.getAllEquipement();
+  }
 
 
   ngAfterViewInit() {
