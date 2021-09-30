@@ -11,7 +11,7 @@ import { EquipementService } from '../equipement.service';
 })
 export class ListEquipementComponent implements OnInit,AfterViewInit  {
   public displayedColumns: string[] = [
-    'id', 'designation','type' ,'brand', 'price'
+    'id', 'designation','type' ,'brand', 'price','actions'
   ];
   public dataSource = new MatTableDataSource();
 
@@ -46,6 +46,14 @@ export class ListEquipementComponent implements OnInit,AfterViewInit  {
   ngAfterViewInit() {
 
   }
+
+  deleteEquipement(equipement:any){
+        console.log(equipement)
+  }
+
+  updateEquipement(equipement:any){
+    console.log(equipement)
+}
 
 }
 

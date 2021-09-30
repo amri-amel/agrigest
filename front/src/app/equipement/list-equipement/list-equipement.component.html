@@ -29,6 +29,13 @@
         <td mat-cell *matCellDef="let element"> {{element.price}} </td>
     </ng-container>
 
+    <ng-container matColumnDef="actions">
+      <th mat-header-cell *matHeaderCellDef> Actions </th>
+      <td mat-cell *matCellDef="let element">
+      <button mat-raised-button color="accent" (click)="deleteEquipement(element)">Delete</button>
+      <button mat-raised-button color="primary"(click)="updateEquipement(element)">Update</button>
+      </td>
+  </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
