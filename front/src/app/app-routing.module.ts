@@ -5,6 +5,7 @@ import { ListEquipementComponent } from './equipement/list-equipement/list-equip
 import { UpdateEquipementComponent } from './equipement/update-equipement/update-equipement.component';
 import { AboutusPageComponent } from './layout/aboutus-page/aboutus-page.component';
 import { ContactPageComponent } from './layout/contact-page/contact-page.component';
+import { EquipementCataloguePageComponent } from './layout/equipement-catalogue-page/equipement-catalogue-page.component';
 import { EquipementsPageComponent } from './layout/equipements-page/equipements-page.component';
 import { HomePageComponent } from './layout/home-page/home-page.component';
 import { ParcelsPageComponent } from './layout/parcels-page/parcels-page.component';
@@ -12,6 +13,9 @@ import { ParcelsPageComponent } from './layout/parcels-page/parcels-page.compone
 const routes: Routes = [
   {path:'',component:HomePageComponent},
   {path:'parcel',component:ParcelsPageComponent},
+  {path:'about',component:AboutusPageComponent},
+  {path:'contact',component:ContactPageComponent},
+  {path:'catalogue',component:EquipementCataloguePageComponent},
   {path:'equipement',component:EquipementsPageComponent,
 children:[
   {path:'', component:ListEquipementComponent},

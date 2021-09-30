@@ -14,4 +14,8 @@ export class EquipementService {
    return this.http.get(`${environment.API_URI}/eqipements`) as Observable<any>;
 
   }
+
+  public sendEquipement(equipement:any):Observable<any>{
+    return  this.http.post('http://localhost:3000/eqipements',equipement) as Observable<any>
+  }
 }

@@ -1,9 +1,11 @@
 var express = require('express');
 var router = express.Router();
+const UserService=require('../services/users.services')
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+router.get('/', async function(req, res, next) {
+  let users=await UserService.getAllUsers();
+  res.json(users);
 });
 
 module.exports = router;

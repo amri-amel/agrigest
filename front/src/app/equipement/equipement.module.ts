@@ -32,6 +32,8 @@ import { EquipementCardComponent } from './equipement-card/equipement-card.compo
     ListEquipementComponent,
     UpdateEquipementComponent,
     AddEquipementComponent,
+    EquipementCatalogueContainerComponent,
+    EquipementCardComponent
   ]
 })
 export class EquipementModule { }
