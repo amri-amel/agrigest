@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { EquipementService } from '../equipement.service';
 
 @Component({
-  selector: 'app-equipement-catalogue-container',
+  selector: 'catalogue-container',
   templateUrl: './equipement-catalogue-container.component.html',
   styleUrls: ['./equipement-catalogue-container.component.scss']
 })
 export class EquipementCatalogueContainerComponent implements OnInit {
-
-  constructor() { }
+  public equipements:any;
+  constructor(private equipementService:EquipementService) { }
 
   ngOnInit(): void {
+      this.equipementService.getAllEquipements()
+      .subscribe( data=> this.equipements=data)
   }
 
 }

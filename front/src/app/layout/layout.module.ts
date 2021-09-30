@@ -10,7 +10,7 @@ import { AboutusPageComponent } from './aboutus-page/aboutus-page.component';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../shared/material/material.module';
 import { EquipementCataloguePageComponent } from './equipement-catalogue-page/equipement-catalogue-page.component';
-
+import { EquipementModule } from '../equipement/equipement.module';
 
 
 
@@ -29,7 +29,8 @@ import { EquipementCataloguePageComponent } from './equipement-catalogue-page/eq
   imports: [
     CommonModule,
     RouterModule,
-    MaterialModule
+    MaterialModule,
+    EquipementModule
   ],
   exports: [
     NavBarComponent,

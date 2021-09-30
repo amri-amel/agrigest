@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, Output } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { EventEmitter } from '@angular/core';
+import { EquipementService } from '../equipement.service';
 
 @Component({
   selector: 'app-add-equipement',
@@ -15,7 +16,7 @@ export class AddEquipementComponent implements OnInit {
   types=['Tracteur','Traxe','Insecticides']
 
   constructor(private fb:FormBuilder,
-    private http:HttpClient ) { }
+    private equipementService:EquipementService ) { }
 
   ngOnInit(): void {
         this.equipementForm=this.fb.group({
@@ -27,7 +28,7 @@ export class AddEquipementComponent implements OnInit {
   }
 
   submitEquipement(){
-    this.http.post('http://localhost:3000/eqipements',this.equipementForm.value)
+   this.equipementService.sendEquipement(this.equipementForm.value)
     .subscribe({
       next:(data)=>console.log(data),
       error:(error=>console.log(error)),

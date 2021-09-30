@@ -18,7 +18,7 @@
       "type": "Machine",
       "price": 45000,
       "brand": "El JEDH3",
-      "photo":"https://fr.wikipedia.org/wiki/Tracteur_agricole#/media/Fichier:New_Holland_T6070.jpg"
+      "photo":"assets/tracteur.jpg"  
     },
     {
       "id": 2,
@@ -26,7 +26,7 @@
       "type": "Machine",
       "price": 145000,
       "brand": "ALAIN",
-      "photo":"https://fr.wikipedia.org/wiki/Tracteur_agricole#/media/Fichier:Tracteur_renault_D22_1957.JPG"
+      "photo":"assets/tracteur.jpg"  
     },
     {
       "designation": "camion",
@@ -34,7 +34,7 @@
       "brand": "Marceds",
       "price": "50000",
       "id": 4,
-      "photo":"https://fr.wikipedia.org/wiki/Tracteur_agricole#/media/Fichier:New_Holland_T6070.jpg"
+      "photo":"assets/tracteur.jpg"  
     },
     {
       "designation": "Trax TOMATO",
@@ -42,7 +42,7 @@
       "brand": "ELJEDDA3",
       "price": "150000",
       "id": 5,
-      "photo":"https://fr.wikipedia.org/wiki/Tracteur_agricole#/media/Fichier:New_Holland_T6070.jpg"
+      "photo":"assets/tracteur.jpg"  
     },
     {
       "designation": "Incecticide DDT",
@@ -50,14 +50,15 @@
       "brand": "ALAIN",
       "price": "45",
       "id": 6,
-      "photo":"https://fr.wikipedia.org/wiki/Tracteur_agricole#/media/Fichier:New_Holland_T6070.jpg"    },
+      "photo":"assets/tracteur.jpg"  
+      },
     {
       "designation": "Trax TOMATO",
       "type": "Traxe",
       "brand": "ELJEDDA3",
       "price": "30000",
       "id": 7,
-      "photo":"https://fr.wikipedia.org/wiki/Tracteur_agricole#/media/Fichier:New_Holland_T6070.jpg"
+      "photo":"assets/tracteur.jpg"  
     }
   ]
 }
