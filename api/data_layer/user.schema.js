@@ -11,7 +11,8 @@ const UserSchema=Schema({
         type: String,
         unique: true,
         required:['email is required']
-    }
+    },
+    password:String
 })
 
-exports=mongoose.model('User',UserSchema);
+module.exports=mongoose.model('User',UserSchema);

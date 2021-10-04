@@ -7,6 +7,12 @@ async function getAllUsers(){
     
 }
 
-export default{
-   getAllUsers:getAllUsers
+const createUser=async (user)=>{
+    result = await User.create(user);
+    return result;
+}
+
+module.exports={
+   getAllUsers,
+   createUser
 }

@@ -8,4 +8,10 @@ router.get('/', async function(req, res, next) {
   res.json(users);
 });
 
+router.post('/', async function(req, res, next) {
+  let user=req.body;
+  let result=await UserService.createUser(user);
+  res.json(result);
+});
+
 module.exports = router;
