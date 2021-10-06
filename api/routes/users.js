@@ -170,24 +170,7 @@ router.put('/grant-access/:id', helpers.validateUser, helpers.isGranted, helpers
   }
 });
 
-// Assign a given User to a given Customer
-// and update cross reference in bouth entity
-// PUT /assign-user-customer 
-// body {userId,customerId}
-router.put('/assign-user-customer', helpers.validateUser, helpers.isGranted, helpers.isAdmin, async function (req, res,ext) {
-  let userId = req.body.userId;
-  let customerId = req.body.customerId;
-  try {
-    let response = await userService.assignUserToCustomer(Customer)(userId,customerId);
-   
-    if (response) {
-      res.status(200).json(response);
-    }
 
-  } catch (error) {
-    next(error)
-  }
-});
 
 // Delete User
 // DELETE /delete/:id
