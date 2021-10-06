@@ -7,8 +7,9 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-const { Mongoose } = require('mongoose');
-Mongoose.connect(process.env.MONGO_DB_CONNECTION | 'mongodb:localhost:27017')
+
+
+
 var app = express();
 
 
@@ -16,7 +17,10 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 app.use(express.static(path.join(__dirname, 'public')));
+
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

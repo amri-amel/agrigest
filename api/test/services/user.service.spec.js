@@ -8,7 +8,6 @@ const ObjectId = require('mongoose').Types.ObjectId;
 //connect to the files we are testing
 const db = require('../../db/index');
 const UserModel = require('../../db/models/user-schema');
-const CustomerModel = require('../../db/models/customer-schema');
 const UserService = require('../../services/user-service')(UserModel);
 const ROLES = require('../../helpers/user-validation').roles;
 
@@ -781,130 +780,6 @@ describe("userService Test suite", () => {
         })
     })
 
-    // Test suit for assingUserToCustomer
-    describe('userService.assignUserToCustomer()', () => {
-        before(async () => {
-            await UserModel.deleteMany();
-            
-        })
 
-        beforeEach(async () => {
-            await UserModel.deleteMany();
-            
-        })
-
-        afterEach(async () => {
-            await UserModel.deleteMany();
-            
-        })
-
-        
-        after(async () => {
-            await UserModel.deleteMany();
-            
-        })
-
-        it('Ok, Assign User To customer', async () => {
-            let user = await UserModel.create({
-                "fullusername": "Issam JOOMAA",
-                "email": "issam@gmail.com",
-                "password": "toto",
-                "phone": "+216 22 45 79 16"
-            });
-            let customer = await CustomerModel.create({
-                "fullname": "Club Tennis Erlangen",
-                "adress": "Road Manhaten",
-                "city": "Erlangen",
-                "isLicenced": true
-            });
-
-            let result = await UserService.assignUserToCustomer(CustomerModel)(user._id, customer._id);
-            expect(result).not.to.be.undefined;
-            expect(result).to.contain.property('status');
-            expect(result).to.contain.property('message');
-            expect(result).to.contain.property('payload');
-            expect(result.status).to.equal('success');
-            expect(result.message).to.equal(`User assigned to Customer`);
-            expect(result.payload).not.to.be.undefined;
-            expect(result.payload).to.contain.property('user');
-            expect(result.payload).to.contain.property('customer');
-
-            let _u = result.payload.user;
-            let _c = result.payload.customer;
-
-            expect(_u.customer).to.equal(customer._id);
-            expect(_c.users).includes(user._id);
-
-        })
-
-        it('Fail, to Assign unvalid User To unvalid  customer', async () => {
-
-            let result = await UserService.assignUserToCustomer(CustomerModel)(ObjectId(1), ObjectId(2));
-            expect(result).not.to.be.undefined;
-            expect(result).to.contain.property('status');
-            expect(result).to.contain.property('message');
-            expect(result).to.contain.property('payload');
-            expect(result.status).to.equal('error');
-            expect(result.message).to.equal(`Error can't assign User to Customer`);
-            expect(result.payload).not.to.be.undefined;
-            console.log(result.payload);
-
-        })
-
-        it('Fail, To assign a valid User To unvalid customer', async () => {
-            let user = await UserModel.create({
-                "fullusername": "Issam JOOMAA",
-                "email": "issam@gmail.com",
-                "password": "toto",
-                "phone": "+216 22 45 79 16"
-            });
-
-
-            let result = await UserService.assignUserToCustomer(CustomerModel)(user._id, ObjectId(1));
-            expect(result).not.to.be.undefined;
-            expect(result).to.contain.property('status');
-            expect(result).to.contain.property('message');
-            expect(result).to.contain.property('payload');
-            expect(result.status).to.equal('error');
-            expect(result.message).to.equal(`Error can't assign User to Customer`);
-            expect(result.payload).not.to.be.undefined;
-
-        })
-
-
-        it('Fail, To assign a unvalid User To valid customer', async () => {
-
-            let customer = await CustomerModel.create({
-                "fullname": "Club Tennis Erlangen",
-                adress: "Road Manhaten",
-                city: "Erlangen",
-                isLicenced: true
-            });
-
-
-            let result = await UserService.assignUserToCustomer(CustomerModel)(ObjectId(1), customer._id);
-            expect(result).not.to.be.undefined;
-            expect(result).to.contain.property('status');
-            expect(result).to.contain.property('message');
-            expect(result).to.contain.property('payload');
-            expect(result.status).to.equal('error');
-            expect(result.message).to.equal(`Error can't assign User to Customer`);
-            expect(result.payload).not.to.be.undefined;
-
-        })
-
-        it('Fail, To assign without user._id or customer._id', async () => {
-
-            let result = await UserService.assignUserToCustomer(CustomerModel)();
-            expect(result).not.to.be.undefined;
-            expect(result).to.contain.property('status');
-            expect(result).to.contain.property('message');
-            expect(result).to.contain.property('payload');  
-            expect(result.status).to.equal('error');
-            expect(result.message).to.equal(`Can't assign user to customer`);
-            expect(result.payload).not.to.be.undefined;
-
-        })
-    })
 
 })

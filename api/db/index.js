@@ -1,8 +1,7 @@
 const mongoose = require('mongoose');
-const config=require('../config/db_connect');
 
-const DB_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/digital_feed_generator_db';
-//const DB_URI = config.remote_production;
+
+const DB_URI = process.env.MONGO_DB_CONNECTION || 'mongodb://localhost:27017/agrigest_db';
 
 function connect() {
   return new Promise((resolve, reject) => {
@@ -14,7 +13,7 @@ function connect() {
       mockgoose.prepareStorage()
         .then(() => {
           mongoose.connect(DB_URI,
-            { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true ,useFindAndModify:false })
+            { useNewUrlParser: true})
             .then((res, err) => {
               if (err) return reject(err);
               resolve();
@@ -22,7 +21,7 @@ function connect() {
         })
     } else {
         mongoose.connect(DB_URI,
-          { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true,useFindAndModify:false })
+          { useNewUrlParser: true})
           .then((res, err) => {
             if (err) return reject(err);
             resolve(res);

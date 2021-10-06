@@ -238,42 +238,7 @@ const grantAccessToUser = User => async (id) => {
 }
 
 
-const assignUserToCustomer = User => Customer => async (userId, customerId) => {
-    if(userId === undefined || customerId ===undefined){
-        return ({
-            status: "error",
-            message: `Can't assign user to customer`,
-            payload: null
-        });
-    }
 
-    try {
-        let user=await User.findById(userId);
-        user.customer=customerId;
-        await user.save();
-
-        let customer=await Customer.findById(customerId);
-        customer.users.push(userId);
-        await customer.save();
-        return({
-            status: "success",
-            message: `User assigned to Customer`,
-            payload: {
-                user:user,
-                customer:customer
-            }
-        })
-
-        
-    } catch (error) {
-        return ({
-            status: "error",
-            message: `Error can't assign User to Customer`,
-            payload: error
-        });
-        
-    }
-}
 
 module.exports = (User) => {
     return {
@@ -285,6 +250,5 @@ module.exports = (User) => {
         updateUserRole: updateUserRole(User),
         deleteUser: deleteUser(User),
         grantAccessToUser: grantAccessToUser(User),
-        assignUserToCustomer: assignUserToCustomer(User)
     }
 }

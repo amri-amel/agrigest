@@ -1,5 +1,5 @@
 process.env.NODE_ENV = 'test';
-const apiUri = '/api/v1/users';
+const apiUri = '/users';
 
 const expect = require('chai').expect;
 const request = require('supertest');

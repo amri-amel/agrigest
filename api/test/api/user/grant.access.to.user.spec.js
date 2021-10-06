@@ -1,5 +1,5 @@
 process.env.NODE_ENV = 'test';
-const apiUri = '/api/v1/users';
+const apiUri = '/users';
 
 var jwt = require('jsonwebtoken');
 var secretKey = require('../../../config/credentials.json').secret_key;

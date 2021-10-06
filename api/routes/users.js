@@ -7,7 +7,7 @@ const {
   validationResult
 } = require('express-validator');
 const userService = require('../services/user-service')(User);
-const Customer = require('../db/models/customer-schema');
+
 
 
 
