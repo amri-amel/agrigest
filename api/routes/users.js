@@ -1,3 +1,4 @@
+
 const express = require('express');
 const router = express.Router();
 const User = require('../db/models/user-schema');
@@ -22,8 +23,8 @@ router.post('/register', [check('email').isEmail()], async function (req, res, n
         payload: null
       });
     } else {
-      let {
-        ...user
+      let{
+         ...user
       } = req.body
       try {
         let response = await userService.register(user);
@@ -188,3 +189,9 @@ router.delete('/delete/:id', helpers.validateUser, helpers.isAdmin, async functi
 
 
 module.exports = router;
+
+  res.json(result);
+});
+
+module.exports = router;
+

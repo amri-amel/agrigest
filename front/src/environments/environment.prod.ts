@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  API_URI:""
+  API_URI:"https://agrigest.herokuapp.com"
 };
